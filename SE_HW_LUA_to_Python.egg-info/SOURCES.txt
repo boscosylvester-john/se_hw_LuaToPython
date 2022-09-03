@@ -1,0 +1,7 @@
+README.md
+setup.py
+SE_HW_LUA_to_Python.egg-info/PKG-INFO
+SE_HW_LUA_to_Python.egg-info/SOURCES.txt
+SE_HW_LUA_to_Python.egg-info/dependency_links.txt
+SE_HW_LUA_to_Python.egg-info/top_level.txt
+src/__init__.py
