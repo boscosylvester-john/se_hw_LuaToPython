@@ -1,5 +1,6 @@
 import sys
 import random
+from Utils import *
 
 class Num:
     def __init__(self, c = 0, s = ""):
@@ -21,8 +22,9 @@ class Num:
             self.isSorted = True
         return self._has
     
+    # this function needs to be updated after 'the' is implemented
     def add(self, v):
-        if v is not "?":
+        if v != "?":
             self.n = self.n + 1
             self.lo = min(v, self.lo)
             self.hi = max(v, self.hi)
