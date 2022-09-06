@@ -22,7 +22,7 @@ def coerce(s):
     except:
         return re.search(s,"^%s*(.-)%s*$")
 
-def show(k,v):
+def show(k,v,t):
     if "^_" not in str(k):
       v = o(v)
       if len(t)==False:
@@ -35,8 +35,8 @@ def o(t,u):
   if isinstance(t,dict):
     return str(t)
   u={}
-  for k,v in pairs(t):
-    u[1+len(u)] = show(k,v)
+  for k,v in t.items():
+    u[1+len(u)] = show(k,v,t)
   if len(t)==0:
     q = sorted(u)
   r = "{"
