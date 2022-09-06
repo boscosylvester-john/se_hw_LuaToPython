@@ -1,6 +1,6 @@
 import sys
 import random
-from Utils import *
+from .Utils import *
 
 class Sym:
     def __init__(self, c = 0, s = ""):
