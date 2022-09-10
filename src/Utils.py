@@ -71,8 +71,8 @@ def initialize_the():
     for i in text:
       a = re.compile(r"-[\S+]\s+--[\S+]+\s+[\S+]+\s+", re.IGNORECASE)
       b = re.compile(r"=\s[\S+]+", re.IGNORECASE)
-      c = re.search(b,e).group()[2:]
-      the[re.search(a,e).group()] = coerce(c)
+      c = re.search(b,i).group()[2:]
+      the[re.search(a,i).group()] = coerce(c)
     return the 
 
 def the():
