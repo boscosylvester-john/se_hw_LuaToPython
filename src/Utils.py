@@ -1,6 +1,20 @@
 import math
 import regex as re
 
+help = """CSV : summarized csv file
+(c) 2022 Tim Menzies <timm@ieee.org> BSD-2 license
+
+USAGE: lua seen.lua [OPTIONS]
+
+OPTIONS:
+ -e  --eg        start-up example                      = nothing
+ -d  --dump      on test failure, exit with stack dump = false
+ -f  --file      file with csv data                    = ../data/auto93.csv
+ -h  --help      show help                             = false
+ -n  --nums      number of nums to keep                = 512
+ -s  --seed      random number seed                    = 10019
+ -S  --seperator feild seperator                       = ,"""
+
 def per(t, p = 0.5):
     p = math.floor((p * len(t)) + 0.5)
     ind = max(1, min(len(t), p))
@@ -50,6 +64,17 @@ def oo(t):
     print(o(t))
     return t
 
+def initialize_the():
+    the = {}
+    reg = re.compile(r"-[\S+]\s+--[\S+]+\s+[\S+]+\s+=\s[\S+]+", re.IGNORECASE)
+    text = re.findall(reg,help)
+    for i in text:
+      a = re.compile(r"-[\S+]\s+--[\S+]+\s+[\S+]+\s+", re.IGNORECASE)
+      b = re.compile(r"=\s[\S+]+", re.IGNORECASE)
+      c = re.search(b,e).group()[2:]
+      the[re.search(a,e).group()] = coerce(c)
+    return the 
+
 def the():
-    oo(the)
+    oo(initialize_the())
     return True
