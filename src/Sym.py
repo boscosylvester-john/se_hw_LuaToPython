@@ -12,7 +12,10 @@ class Sym:
     def add(self, v):
         if v != "?":
             self.n = self.n + 1
-            self._has[v] =  1 + (self._has[v])
+            if v in self._has:
+              self._has[v] =  1 + (self._has[v])
+            else:
+              self._has[v] = 1
     
     def mid(self):
       mode = most = -1

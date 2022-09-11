@@ -45,7 +45,7 @@ def show(k,v,t):
         v = str(v)
         return len(t)
 
-def o(t,u):
+def o(t):
   if isinstance(t,dict):
     return str(t)
   u={}
