@@ -1,5 +1,6 @@
 import math
 import regex as re
+import pandas as pd
 
 help = """CSV : summarized csv file
 (c) 2022 Tim Menzies <timm@ieee.org> BSD-2 license
@@ -78,3 +79,9 @@ def initialize_the():
 def the():
     oo(initialize_the())
     return True
+
+def data():
+  d = Data("../data/auto93.csv")
+  for _,col in d[y].items():
+    oo(col)
+  return true
