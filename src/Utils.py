@@ -65,7 +65,7 @@ def oo(t):
     print(o(t))
     return t
 
-the={nums:512}
+the={"nums":512}
 def initialize_the():
     reg = re.compile(r"-[\S+]\s+--[\S+]+\s+[\S+]+\s+=\s[\S+]+", re.IGNORECASE)
     text = re.findall(reg,help)
