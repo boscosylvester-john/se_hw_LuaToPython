@@ -83,3 +83,8 @@ def rnd(x, places):
     mult = math.pow(10,places)
   return (math.floor(x*mult +0.5)/mult)
 
+def push(t,x):
+  t[len(t)+1] = x
+  return x
+
+
