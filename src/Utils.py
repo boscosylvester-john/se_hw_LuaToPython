@@ -65,8 +65,8 @@ def oo(t):
     print(o(t))
     return t
 
+the={nums:512}
 def initialize_the():
-    the = {}
     reg = re.compile(r"-[\S+]\s+--[\S+]+\s+[\S+]+\s+=\s[\S+]+", re.IGNORECASE)
     text = re.findall(reg,help)
     for i in text:
@@ -75,10 +75,6 @@ def initialize_the():
       c = re.search(b,i).group()[2:]
       the[re.search(a,i).group()] = coerce(c)
     return the 
-
-def the():
-    oo(initialize_the())
-    return True
 
 def data():
   d = Data("../data/auto93.csv")
