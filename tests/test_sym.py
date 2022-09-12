@@ -1,10 +1,14 @@
 from src import Sym 
 from src import Utils as utils
 import pytest
+
 sym=Sym.Sym(1,"name")
 
 print(sym._has)
 
+def test_the():
+    utils.oo(utils.initialize_the())
+    return True
 
 def test_sym():
     for v in ["a","a","a","a","b","b","c"]:
