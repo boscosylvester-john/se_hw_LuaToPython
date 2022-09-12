@@ -1,7 +1,7 @@
 import math
 import regex as re
 import pandas as pd
-
+from .Data import *
 help = """CSV : summarized csv file
 (c) 2022 Tim Menzies <timm@ieee.org> BSD-2 license
 
@@ -76,8 +76,9 @@ def initialize_the():
       the[re.search(a,i).group()] = coerce(c)
     return the 
 
-def data():
-  d = Data("../data/auto93.csv")
-  for _,col in d[y].items():
-    oo(col)
-  return true
+def rnd(x, places):
+  if places is None:
+    mult = math.pow(10,2)
+  else:
+    mult = math.pow(10,places)
+  return (math.floor(x*mult +0.5)/mult)
