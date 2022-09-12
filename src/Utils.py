@@ -76,8 +76,3 @@ def initialize_the():
       the[re.search(a,i).group()] = coerce(c)
     return the 
 
-def data():
-  d = Data("../data/auto93.csv")
-  for _,col in d[y].items():
-    oo(col)
-  return true
