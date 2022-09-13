@@ -1,7 +1,7 @@
 import math
 import regex as re
 import pandas as pd
-
+from .Data import *
 help = """CSV : summarized csv file
 (c) 2022 Tim Menzies <timm@ieee.org> BSD-2 license
 
@@ -65,8 +65,8 @@ def oo(t):
     print(o(t))
     return t
 
+the={"nums":512}
 def initialize_the():
-    the = {}
     reg = re.compile(r"-[\S+]\s+--[\S+]+\s+[\S+]+\s+=\s[\S+]+", re.IGNORECASE)
     text = re.findall(reg,help)
     for i in text:
@@ -76,12 +76,15 @@ def initialize_the():
       the[re.search(a,i).group()] = coerce(c)
     return the 
 
-def the():
-    oo(initialize_the())
-    return True
+def rnd(x, places):
+  if places is None:
+    mult = math.pow(10,2)
+  else:
+    mult = math.pow(10,places)
+  return (math.floor(x*mult +0.5)/mult)
 
-def data():
-  d = Data("../data/auto93.csv")
-  for _,col in d[y].items():
-    oo(col)
-  return true
+def push(t,x):
+  t[len(t)+1] = x
+  return x
+
+
