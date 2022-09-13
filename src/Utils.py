@@ -17,7 +17,7 @@ OPTIONS:
  -S  --seperator feild seperator                       = ,"""
 
 def per(t, p = 0.5):
-    p = math.floor((p * len(t)) + 0.5)
+    p = math.floor(((p or 0.5)* len(t)) + 0.5)
     ind = max(1, min(len(t), p))
     return t[ind]
 
@@ -87,4 +87,23 @@ def push(t,x):
   t[len(t)+1] = x
   return x
 
+def coerce(val):
+  if type(val) == int:
+    return int(val)
+  else:
+    if val == 'true': return True
+    if val == 'false': return False
+    else:
+      return re.compile(r"^\s*(.*)\s*$").search(val).group()
 
+
+def csv(fname, fun):
+  separator = the['separator']
+  rows = []
+  with open(fname, 'r', encoding='utf-8') as file:
+    s = list(csv.reader(file))
+  for i in range(len(s)):
+    t=[]
+    for word in s[i].split(separator):
+      t.append(coerce(word))
+    fun(t)
