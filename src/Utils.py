@@ -1,7 +1,6 @@
 import math
-import regex as re
-import pandas as pd
-from .Data import *
+import re
+
 help = """CSV : summarized csv file
 (c) 2022 Tim Menzies <timm@ieee.org> BSD-2 license
 
@@ -17,7 +16,8 @@ OPTIONS:
  -S  --seperator feild seperator                       = ,"""
 
 def per(t, p = 0.5):
-    p = math.floor(((p or 0.5)* len(t)) + 0.5)
+    p = math.floor((p * len(t)) + 0.5)
+    print("value of p is: ")
     ind = max(1, min(len(t), p))
     return t[ind]
 
