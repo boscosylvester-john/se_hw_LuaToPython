@@ -11,4 +11,4 @@ def test_csv():
             oo(row)
     n = 0
     # TODO fix csv function call
-    # csv("../data/test-file.txt")
+    csv("data/auto93.csv")
