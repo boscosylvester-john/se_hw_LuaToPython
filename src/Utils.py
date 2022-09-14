@@ -1,4 +1,5 @@
 import math
+import csv as csvPack
 import regex as re
 import pandas as pd
 from .Data import *
@@ -65,7 +66,7 @@ def oo(t):
     print(o(t))
     return t
 
-the={"nums":512}
+the={"nums":512, 'separator':  ','}
 def initialize_the():
     reg = re.compile(r"-[\S+]\s+--[\S+]+\s+[\S+]+\s+=\s[\S+]+", re.IGNORECASE)
     text = re.findall(reg,help)
@@ -97,13 +98,15 @@ def coerce(val):
       return re.compile(r"^\s*(.*)\s*$").search(val).group()
 
 
-def csv(fname, fun):
-  separator = the['separator']
+def csv(fname):
+  # separator = the['separator']
   rows = []
   with open(fname, 'r', encoding='utf-8') as file:
-    s = list(csv.reader(file))
+    s = list(csvPack.reader(file))
   for i in range(len(s)):
     t=[]
-    for word in s[i].split(separator):
+    # for word in s[i].split(separator):
+    #   t.append(coerce(word))
+    for word in s[i]:
       t.append(coerce(word))
-    fun(t)
+  return t
