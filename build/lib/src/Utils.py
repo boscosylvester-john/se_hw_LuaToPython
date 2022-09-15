@@ -1,5 +1,6 @@
 import math
-import regex as re
+import re
+import csv as csvPack
 
 help = """CSV : summarized csv file
 (c) 2022 Tim Menzies <timm@ieee.org> BSD-2 license
@@ -17,6 +18,7 @@ OPTIONS:
 
 def per(t, p = 0.5):
     p = math.floor((p * len(t)) + 0.5)
+    print("value of p is: ")
     ind = max(1, min(len(t), p))
     return t[ind]
 
@@ -45,7 +47,7 @@ def show(k,v,t):
         v = str(v)
         return len(t)
 
-def o(t,u):
+def o(t):
   if isinstance(t,dict):
     return str(t)
   u={}
@@ -64,8 +66,8 @@ def oo(t):
     print(o(t))
     return t
 
+the={"nums":512, 'separator':  ','}
 def initialize_the():
-    the = {}
     reg = re.compile(r"-[\S+]\s+--[\S+]+\s+[\S+]+\s+=\s[\S+]+", re.IGNORECASE)
     text = re.findall(reg,help)
     for i in text:
@@ -75,6 +77,36 @@ def initialize_the():
       the[re.search(a,i).group()] = coerce(c)
     return the 
 
-def the():
-    oo(initialize_the())
-    return True
+def rnd(x, places):
+  if places is None:
+    mult = math.pow(10,2)
+  else:
+    mult = math.pow(10,places)
+  return (math.floor(x*mult +0.5)/mult)
+
+def push(t,x):
+  t[len(t)+1] = x
+  return x
+
+def coerce(val):
+  if type(val) == int:
+    return int(val)
+  else:
+    if val == 'true': return True
+    if val == 'false': return False
+    else:
+      return re.compile(r"^\s*(.*)\s*$").search(val).group()
+
+
+def csv(fname):
+  # separator = the['separator']
+  rows = []
+  with open(fname, 'r', encoding='utf-8') as file:
+    s = list(csvPack.reader(file))
+  for i in range(len(s)):
+    t=[]
+    # for word in s[i].split(separator):
+    #   t.append(coerce(word))
+    for word in s[i]:
+      t.append(coerce(word))
+  return t
