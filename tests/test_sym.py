@@ -3,8 +3,6 @@ import Utils as utils
 
 sym=Sym.Sym(1,"name")
 
-print(sym._has)
-
 def test_the():
     utils.oo(utils.initialize_the())
     return True
