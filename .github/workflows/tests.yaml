@@ -21,6 +21,4 @@ jobs:
     - name: Install dependencies
       run: python -m pip install --upgrade pip
     - name: Test with unittest engine
-      run: |
-        python __init__.py
-      working-directory: ./tests
+      run: python -m unittest
