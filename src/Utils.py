@@ -47,7 +47,7 @@ def show(k,v,t):
         return len(t)
 
 def o(t):
-  if isinstance(t,dict):
+  if type(t) != dict:
     return str(t)
   u={}
   for k,v in t.items():
@@ -97,7 +97,7 @@ def coerce(val):
       return re.compile(r"^\s*(.*)\s*$").search(val).group()
 
 
-def csv(fname):
+def csv(fname, fun=None):
   # separator = the['separator']
   rows = []
   with open(fname, 'r', encoding='utf-8') as file:
@@ -108,4 +108,5 @@ def csv(fname):
     #   t.append(coerce(word))
     for word in s[i]:
       t.append(coerce(word))
+    fun(t)
   return t

@@ -1,12 +1,11 @@
 from Utils import oo, csv
 
 def test_csv():
-    def row(row, n):
+    def row(t, n):
         n += 1
         if n > 10:
-            return
+            return  
         else:
-            oo(row)
+            oo(t)
     n = 0
-    # TODO fix csv function call
-    csv("data/auto93.csv")
+    csv("data/auto93.csv", lambda t, n=n: row(t, n))
