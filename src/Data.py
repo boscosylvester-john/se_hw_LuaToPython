@@ -8,7 +8,7 @@ class Data:
         self.cols  = None
         self.rows = {}
         if type(src) == str:
-            csv(src,self.add(row))
+            csv(src, lambda row: self.add(row))
         else:
             for row in src or {}:
                 self.add(row)
