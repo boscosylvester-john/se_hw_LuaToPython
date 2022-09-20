@@ -5,9 +5,17 @@ import unittest
 
 class TestingData(unittest.TestCase):
   def test_data(self):
-    d = data.Data("https://raw.githubusercontent.com/timm/lua/main/data/auto93.csv")
+    d = data.Data("../data/auto93.csv")
     for _,col in d.cols.y:
       utils.oo(col)
+    return True
+
+  def test_stats(self):
+    d = data.Data("../data/auto93.csv")
+    print('xmid=', d.stats(2, d.cols.x, "mid"))
+    print('xdiv=', d.stats(3, d.cols.x, "div"))
+    print('ymid=', d.stats(2, d.cols.y, "mid"))
+    print('ymid=', d.stats(3, d.cols.y, "div"))
     return True
 
 if __name__ == "__main__":

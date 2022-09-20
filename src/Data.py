@@ -21,6 +21,7 @@ class Data:
             for todo in list(self.cols.x,self.cols.y) :
                 for col in todo:
                     col.add(row.cells(col.at))
+                    
     def stats(self, places,showCols,fun):
         if showCols is None:
             showCols = self.cols.y
