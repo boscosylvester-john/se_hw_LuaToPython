@@ -53,9 +53,9 @@ def o(t):
   for k,v in t.items():
     u[1+len(u)] = show(k,v,t)
   if len(t)==0:
-    q = sorted(u)
+    u = dict(sorted(u.items()))
   r = "{"
-  for i in q.values():
+  for i in u.values():
     r += str(i) + " "
   r = r.rstrip(r[-1])
   r += "}"
