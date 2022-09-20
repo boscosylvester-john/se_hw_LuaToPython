@@ -1,7 +1,7 @@
 from tokenize import String
-from .Utils import * 
-from .Cols import *
-from .Row import *
+from Utils import * 
+from Cols import *
+from Row import *
 
 class Data:
     def __init__(self,src):

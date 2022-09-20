@@ -1,6 +1,4 @@
-
-from src.Utils import oo
-from src.Utils import csv
+from Utils import oo, csv
 
 def test_csv():
     def row(row, n):

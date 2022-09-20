@@ -1,5 +1,5 @@
-from src import Num 
-from src import Utils as utils
+import Num 
+import Utils as utils
 
 def test_num():
     num = Num.Num()

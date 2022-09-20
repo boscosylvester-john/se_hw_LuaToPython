@@ -1,6 +1,5 @@
-from src import Sym 
-from src import Utils as utils
-import pytest
+import Sym 
+import Utils as utils
 
 sym=Sym.Sym(1,"name")
 

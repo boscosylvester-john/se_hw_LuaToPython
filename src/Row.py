@@ -1,6 +1,6 @@
 import sys
 import random
-from .Utils import *
+from Utils import *
 
 class Row:
     def __init__(self, t):

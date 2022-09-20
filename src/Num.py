@@ -1,6 +1,6 @@
 import sys
 import random
-from .Utils import *
+from Utils import *
 
 class Num:
     def __init__(self, c = 0, s = ""):
@@ -42,5 +42,4 @@ class Num:
         return (per(a, 0.9) - per(a, 0.1)) / 2.58
 
     def mid(self):
-        print("in mid: ", self.nums())
         return per(self.nums(), 0.5)
