@@ -10,7 +10,7 @@ class TestingCSV(unittest.TestCase):
             else:
                 oo(t)
         n = 0
-        csv("data/auto93.csv", lambda t, n=n: row(t, n))
+        csv("../data/testdata.txt", lambda t, n=n: row(t, n))
 
 if __name__ == "__main__":
     unittest.main()

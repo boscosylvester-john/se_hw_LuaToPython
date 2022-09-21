@@ -100,7 +100,7 @@ def coerce(val):
 def csv(fname, fun=None):
   # separator = the['separator']
   rows = []
-  with open(fname, 'r', encoding='utf-8') as file:
+  with open(fname, 'r') as file:
     s = list(csvPack.reader(file))
   for i in range(len(s)):
     t=[]
