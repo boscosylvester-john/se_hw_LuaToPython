@@ -100,9 +100,9 @@ def cli(t):
         else:
           v = sys.argv[n + 1]
       t[slot] = coerce(v)
-   if t['help']:
-      exit (print("\n" + str(t["help"]) + "\n"))
-   return t
+  if t['help']:
+    exit (print("\n" + str(t["help"]) + "\n"))
+  return t
  
 def copy(t):
   if type(t) != dict:
