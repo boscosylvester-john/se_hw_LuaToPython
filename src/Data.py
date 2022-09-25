@@ -17,10 +17,14 @@ class Data:
         if self.cols == None:
             self.cols = Cols(xs)
         else:
-            row = push(self.rows, xs.cells and xs or Row(xs))
-            for todo in list(self.cols.x,self.cols.y) :
-                for col in todo:
-                    col.add(row.cells(col.at))
+            try:
+                row = push(self.rows, xs.cells)
+            except:                
+                row = push(self.rows, Row(xs).cells)
+            for col in self.cols.x:
+                col.add(row[col.at])
+            for col in self.cols.y:
+                col.add(row[col.at])
                     
     def stats(self, places,showCols,fun):
         if showCols is None:
@@ -29,7 +33,10 @@ class Data:
             fun = "mid"
         t={}
         for col in showCols:
-            v=fun(col)
+            if fun == "mid":
+                v = col.mid()
+            else:
+                v=col.div()
             v = type(v) == float and rnd(v,places) or v 
             t[col.name] = v
         return t

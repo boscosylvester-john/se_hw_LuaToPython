@@ -31,14 +31,6 @@ def fun(s1):
         return False
     return s1 
 
-def coerce(s):
-    try:
-        return int(s)
-    except:
-        try:
-          return float(s)
-        except:          
-          return re.search(s,"^%s*(.-)%s*$")
 
 def show(k,v,t):
     if "^_" not in str(k):
@@ -68,17 +60,11 @@ def oo(t):
     print(o(t))
     return t
 
-the={"nums":512, 'separator':  ','}
+the={}
 
 def initialize_the():
-    reg = re.compile(r"-[\S+]\s+--[\S+]+\s+[\S+]+\s+=\s[\S+]+", re.IGNORECASE)
-    text = re.findall(reg,help)
-    for i in text:
-      a = re.compile(r"-[\S+]\s+--[\S+]+\s+[\S+]+\s+", re.IGNORECASE)
-      b = re.compile(r"=\s[\S+]+", re.IGNORECASE)
-      c = re.search(b,i).group()[2:]
-      the[re.search(a,i).group()] = coerce(c)
-    return the 
+  for k, x in re.findall(r"\n [-][\S+]+[\s]+[-][-]([\S+]+)[^\n]+= ([\S+]+)", help):
+    the[k] = coerce(x)
 
 def rnd(x, places):
   if places is None:
@@ -92,25 +78,22 @@ def push(t,x):
   return x
 
 def coerce(val):
-  if type(val) == int:
+  try:
     return int(val)
-  else:
-    if val == 'true': return True
-    if val == 'false': return False
-    else:
-      return re.compile(r"^\s*(.*)\s*$").search(val).group()
+  except:
+    try:
+      return float(val)
+    except:
+      return fun(re.compile(r"^\s*(.*)\s*$").search(val).group())
 
 
 def csv(fname, fun):
-  separator = '([^'+the['separator']+']+'
-  rows = []
+  initialize_the()
+  seperator = re.compile(r'([^'+the['seperator']+']+)')
   with open(fname, 'r') as file:
-    s = list(csvPack.reader(file))
-  for i in range(len(s)):
-    t=[]
-    # for word in s[i].split(separator):
-    #   t.append(coerce(word))
-    for word in s[i]:
-      t.append(coerce(word))
-    fun(t)
-  return t
+    s = file.readlines()
+    for row in s:
+      t={}
+      for word in re.finditer(seperator,row):
+        t[len(t)+1] = coerce(word.group(0))
+      fun(t)

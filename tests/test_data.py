@@ -1,4 +1,4 @@
-import Sym 
+import Sym as sym
 import Utils as utils
 import Data as data
 import unittest
@@ -6,7 +6,7 @@ import unittest
 class TestingData(unittest.TestCase):
   def test_data(self):
     d = data.Data("data\\testdata.txt")
-    for _,col in d.cols.y:
+    for col in d.cols.y:
       utils.oo(col)
     return True
 
