@@ -35,7 +35,10 @@ def coerce(s):
     try:
         return int(s)
     except:
-        return re.search(s,"^%s*(.-)%s*$")
+        try:
+          return float(s)
+        except:          
+          return re.search(s,"^%s*(.-)%s*$")
 
 def show(k,v,t):
     if "^_" not in str(k):
@@ -66,6 +69,7 @@ def oo(t):
     return t
 
 the={"nums":512, 'separator':  ','}
+
 def initialize_the():
     reg = re.compile(r"-[\S+]\s+--[\S+]+\s+[\S+]+\s+=\s[\S+]+", re.IGNORECASE)
     text = re.findall(reg,help)
@@ -97,8 +101,8 @@ def coerce(val):
       return re.compile(r"^\s*(.*)\s*$").search(val).group()
 
 
-def csv(fname, fun=None):
-  # separator = the['separator']
+def csv(fname, fun):
+  separator = '([^'+the['separator']+']+'
   rows = []
   with open(fname, 'r') as file:
     s = list(csvPack.reader(file))
