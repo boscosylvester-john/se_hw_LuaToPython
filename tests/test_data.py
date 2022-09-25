@@ -15,7 +15,7 @@ class TestingData(unittest.TestCase):
     print('xmid=', d.stats(2, d.cols.x, "mid"))
     print('xdiv=', d.stats(3, d.cols.x, "div"))
     print('ymid=', d.stats(2, d.cols.y, "mid"))
-    print('ymid=', d.stats(3, d.cols.y, "div"))
+    print('ydiv=', d.stats(3, d.cols.y, "div"))
     return True
 
 if __name__ == "__main__":
