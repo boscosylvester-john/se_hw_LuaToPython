@@ -29,3 +29,26 @@ class TestEngine:
             msg = "CRASH"
         print("!!!!!!", msg, k, status)
         return out
+
+    def BAD(self):
+        print(self.dont.have.this.field)
+
+    def LIST(self):
+        t = {} #needs to be updated
+        sortedt = sorted(t)
+        return sortedt
+
+    def LS(self):
+        print("\nExamples lua csv -e ...")
+        for i, k in self.LIST().items():
+            print(i)
+        return True
+    
+    def ALL(self):
+        for i, k in self.LIST().items():
+            if i != "ALL":
+                print(i)
+                print("\n-----------------------------------")
+                if not self.runs(k):
+                    self.fails += 1
+        return True
