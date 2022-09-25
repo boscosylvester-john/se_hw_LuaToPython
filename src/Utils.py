@@ -119,3 +119,4 @@ def csv(fname, fun):
       for word in re.finditer(seperator,row):
         t[len(t)+1] = coerce(word.group(0))
       fun(t)
+
