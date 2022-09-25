@@ -1,6 +1,8 @@
 import math
 import re
+import sys
 import csv as csvPack
+from copy import deepcopy
 
 help = """CSV : summarized csv file
 (c) 2022 Tim Menzies <timm@ieee.org> BSD-2 license
@@ -100,7 +102,27 @@ def coerce(val):
     else:
       return re.compile(r"^\s*(.*)\s*$").search(val).group()
 
-
+def cli(t):
+  for slot, v in t.items():
+    v = str(v)
+    for n,x in enumerate(sys.argv):
+      if x=="-" + slot[0] or x== "--" + slot:
+        if v == "false":
+          v = "true"
+        elif v == "true":
+          v = "false"
+        else:
+          v = sys.argv[n + 1]
+      t[slot] = coerce(v)
+   if t['help']:
+      exit (print("\n" + str(t["help"]) + "\n"))
+   return t
+ 
+def copy(t):
+  if type(t) != dict:
+    return t
+  return deepcopy(t)
+  
 def csv(fname, fun):
   separator = '([^'+the['separator']+']+'
   rows = []
