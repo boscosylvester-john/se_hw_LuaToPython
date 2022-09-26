@@ -1,5 +1,7 @@
+from cgi import test
 import random
 import Utils as utils
+import test_cases
 
 class TestEngine:
     def __init__(self):
@@ -34,9 +36,10 @@ class TestEngine:
         print(self.dont.have.this.field)
 
     def LIST(self):
-        t = {} #needs to be updated
-        sortedt = sorted(t)
-        return sortedt
+        tests = test_cases.TestCases()
+        t = {"ALL": self.ALL, "the": tests.test_the, "sym": tests.test_sym, "num": tests.test_num, "bignum": tests.test_bigNum, "data" : tests.test_data, "stats": tests.test_stats, "csv": tests.test_csv}
+        sortedTests = sorted(t)
+        return sortedTests
 
     def LS(self):
         print("\nExamples lua csv -e ...")
