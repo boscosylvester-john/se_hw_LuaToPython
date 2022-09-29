@@ -1,0 +1,91 @@
+Metadata-Version: 2.1
+Name: SE-HW-LUA-to-Python
+Version: 1.0
+Summary: SE HW 2 3 4 5
+Home-page: https://github.com/boscosylvester-john/se_hw_LuaToPython
+Author: SE Group 10
+License-File: LICENSE.md
+
+# PYTHON CSV SUMMARIZER
+>This is a requirement for CSC510 Software Engineering HW2,HW3,HW4,HW5 for Group 10
+
+[![DOI](https://zenodo.org/badge/531310181.svg)](https://zenodo.org/badge/latestdoi/531310181)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/boscosylvester-john/se_hw_LuaToPython)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/boscosylvester-john/se_hw_LuaToPython?color=g)](https://github.com/boscosylvester-john/se_hw_LuaToPython/commits/main)
+[![Python CI](https://github.com/boscosylvester-john/se_hw_LuaToPython/actions/workflows/tests.yaml/badge.svg)](https://github.com/boscosylvester-john/se_hw_LuaToPython/actions/workflows/tests.yaml)
+[![GitHub top language](https://img.shields.io/github/languages/top/boscosylvester-john/se_hw_LuaToPython)](https://docs.python.org/3/)
+[![GitHub Workflow Status (event)](https://img.shields.io/github/workflow/status/boscosylvester-john/se_hw_LuaToPython/Tests?event=push)](https://img.shields.io/github/workflow/status/boscosylvester-john/se_hw_LuaToPython/Tests?event=push)
+[![GitHub contributors](https://img.shields.io/github/contributors/boscosylvester-john/se_hw_LuaToPython)](https://github.com/boscosylvester-john/se_hw_LuaToPython/graphs/contributors)
+[![GitHub issues](https://img.shields.io/github/issues/boscosylvester-john/se_hw_LuaToPython)](https://github.com/boscosylvester-john/se_hw_LuaToPython/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/boscosylvester-john/se_hw_LuaToPython)](https://github.com/boscosylvester-john/se_hw_LuaToPython/pulls)
+[![GitHub last commit](https://img.shields.io/github/last-commit/boscosylvester-john/se_hw_LuaToPython)](https://github.com/boscosylvester-john/se_hw_LuaToPython/commits/main)
+
+[![GitHub forks](https://img.shields.io/github/forks/boscosylvester-john/se_hw_LuaToPython?style=social)](https://github.com/boscosylvester-john/se_hw_LuaToPython/network/members)
+
+## Goal
+Implement the functionalities of [this](https://github.com/txt/se22/blob/main/etc/pdf/csv.pdf) Lua code in Python. Basically this code will read and help store CSV data in an appropriate format. It also summarizes the data column wise and displays a few statistics.
+
+### Functionality
+* Read CSV
+* CLI
+* Generate Summary
+### DataTypes
+* Sym
+* Num
+
+### Classes
+* Num
+* Sym
+* Data
+* Cols
+* Row
+
+## Getting Started
+### Installation
+* Install python 3.10.7 from [here](https://www.python.org/downloads/).
+* Create working directory named _Python_Summarizer_
+* Clone this repository from [here](https://github.com/boscosylvester-john/se_hw_LuaToPython.git) or use
+    ```bash
+    $ git clone https://github.com/boscosylvester-john/se_hw_LuaToPython
+    ```
+* Install all the requirements using
+    ```bash
+    $ cd Python_Summarizer
+    $ pip install -r requirements.txt
+    ```
+
+### Running Tests
+
+## Coverage Reports
+___
+The basic mathemtical operations that this repo does are-
+* Addition
+* Subtraction
+* Multiplication
+* Division
+
+___
+
+
+
+## Languages and Tools used
+* Python
+* Github Desktop
+* Git Bash
+* VS Code
+* Codacy
+
+## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
+[License Guidelines](https://github.com/boscosylvester-john/se_hw_LuaToPython/blob/main/LICENSE.md)
+
+### Contribute
+Please have a look at the [guidelines](https://github.com/boscosylvester-john/se_hw_LuaToPython/blob/main/CONTRIBUTING.md) before contributing.
+### Authors
+* Ankur Banerji [Github](https://github.com/ankurbanerji3)
+* Boscosylvester Chittilapilly [Github](https://github.com/boscosylvester-john)
+* Prasad Kamath [Github](https://github.com/kamathprasad9)
+* Shlok Naik [Github](https://github.com/shlokio)
+* Tushar Kini [Github](https://github.com/tusharkini)

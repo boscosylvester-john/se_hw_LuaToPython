@@ -11,6 +11,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/boscosylvester-john/se_hw_LuaToPython)](https://github.com/boscosylvester-john/se_hw_LuaToPython/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/boscosylvester-john/se_hw_LuaToPython)](https://github.com/boscosylvester-john/se_hw_LuaToPython/pulls)
 [![GitHub last commit](https://img.shields.io/github/last-commit/boscosylvester-john/se_hw_LuaToPython)](https://github.com/boscosylvester-john/se_hw_LuaToPython/commits/main)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 [![GitHub forks](https://img.shields.io/github/forks/boscosylvester-john/se_hw_LuaToPython?style=social)](https://github.com/boscosylvester-john/se_hw_LuaToPython/network/members)
 
