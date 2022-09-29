@@ -18,7 +18,7 @@ class TestCases:
         t["mid"] = mode
         t["div"] = entropy
         utils.oo(t)
-        self.assertTrue(mode == "a" and entropy >= 1.37 and entropy <= 1.38)
+        return True if (mode == "a" and entropy >= 1.37 and entropy <= 1.38) else False
 
     def test_num(self):
         num = Num.Num()
@@ -26,7 +26,7 @@ class TestCases:
         for i in range(1,101):
             num.add(i)
         mid, div = num.mid(), num.div()
-        self.assertTrue(mid >= 50 and mid <= 52 and div > 30.5 and div < 32)
+        return True if (mid >= 50 and mid <= 52 and div > 30.5 and div < 32) else False
 
     def test_bigNum(self):
         num = Num.Num()
@@ -36,7 +36,7 @@ class TestCases:
         currentNums = num.nums()
         dictNums = {index:currentNums[index] for index in range(len(currentNums))}
         utils.oo(dictNums)
-        self.assertEqual(32, len(num._has))
+        return True if 32 == len(num._has) else False
 
     def test_data(self):
         d = data.Data("data\\testdata.txt")
@@ -56,8 +56,9 @@ class TestCases:
         def row(t, n):
             n += 1
             if n > 10:
-                return  
+                return
             else:
                 utils.oo(t)
         n = 0
         utils.csv("data\\testdata.txt", lambda t, n=n: row(t, n))
+        return True

@@ -10,5 +10,5 @@ setup(
     long_description=readme,
     author='SE Group 10',
     url='https://github.com/boscosylvester-john/se_hw_LuaToPython',
-    packages=find_packages(exclude=('tests', 'docs'))
+    packages=find_packages(exclude=('tests','docs'))
 )

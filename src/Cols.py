@@ -20,10 +20,10 @@ class Cols:
             if s[-1] != ":":
                 if s[-1] in ['+', '-', '!']:
                     self.y.append(col)
-                    print("added in Y")
+                    # print("added in Y")
                 else:
                     self.x.append(col)
-                    print("added in X")
+                    # print("added in X")
                 if s[-1] == "!":
                     self.klass = col
             

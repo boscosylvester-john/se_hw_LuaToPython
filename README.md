@@ -1,5 +1,6 @@
 # SE LUA TO PYTHON
 [![DOI](https://zenodo.org/badge/531310181.svg)](https://zenodo.org/badge/latestdoi/531310181)
+<a href = "https://github.com/boscosylvester-john/se_hw_LuaToPython/actions/workflows/tests.yaml">![Python CI](https://github.com/boscosylvester-john/se_hw_LuaToPython/actions/workflows/tests.yaml/badge.svg)</a>
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/boscosylvester-john/se_hw_LuaToPython)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/boscosylvester-john/se_hw_LuaToPython?color=g)](https://github.com/boscosylvester-john/se_hw_LuaToPython/commits/main)
 [![Python CI](https://github.com/boscosylvester-john/se_hw_LuaToPython/actions/workflows/tests.yaml/badge.svg)](https://github.com/boscosylvester-john/se_hw_LuaToPython/actions/workflows/tests.yaml?event=push)

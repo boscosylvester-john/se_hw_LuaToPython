@@ -1,6 +1,8 @@
 import math
 import re
+import sys
 import csv as csvPack
+from copy import deepcopy
 
 help = """CSV : summarized csv file
 (c) 2022 Tim Menzies <timm@ieee.org> BSD-2 license
@@ -31,11 +33,6 @@ def fun(s1):
         return False
     return s1 
 
-def coerce(s):
-    try:
-        return int(s)
-    except:
-        return re.search(s,"^%s*(.-)%s*$")
 
 def show(k,v,t):
     if "^_" not in str(k):
@@ -53,9 +50,9 @@ def o(t):
   for k,v in t.items():
     u[1+len(u)] = show(k,v,t)
   if len(t)==0:
-    q = sorted(u)
+    u = dict(sorted(u.items()))
   r = "{"
-  for i in q.values():
+  for i in u.values():
     r += str(i) + " "
   r = r.rstrip(r[-1])
   r += "}"
@@ -65,16 +62,11 @@ def oo(t):
     print(o(t))
     return t
 
-the={"nums":512, 'separator':  ','}
+the={}
+
 def initialize_the():
-    reg = re.compile(r"-[\S+]\s+--[\S+]+\s+[\S+]+\s+=\s[\S+]+", re.IGNORECASE)
-    text = re.findall(reg,help)
-    for i in text:
-      a = re.compile(r"-[\S+]\s+--[\S+]+\s+[\S+]+\s+", re.IGNORECASE)
-      b = re.compile(r"=\s[\S+]+", re.IGNORECASE)
-      c = re.search(b,i).group()[2:]
-      the[re.search(a,i).group()] = coerce(c)
-    return the 
+  for k, x in re.findall(r"\n [-][\S+]+[\s]+[-][-]([\S+]+)[^\n]+= ([\S+]+)", help):
+    the[k] = coerce(x)
 
 def rnd(x, places):
   if places is None:
@@ -88,24 +80,43 @@ def push(t,x):
   return x
 
 def coerce(val):
-  if type(val) == int:
+  try:
     return int(val)
-  else:
-    if val == 'true': return True
-    if val == 'false': return False
-    else:
-      return re.compile(r"^\s*(.*)\s*$").search(val).group()
+  except:
+    try:
+      return float(val)
+    except:
+      return fun(re.compile(r"^\s*(.*)\s*$").search(val).group())
 
-
-def csv(fname):
-  # separator = the['separator']
-  rows = []
-  with open(fname, 'r', encoding='utf-8') as file:
-    s = list(csvPack.reader(file))
-  for i in range(len(s)):
-    t=[]
-    # for word in s[i].split(separator):
-    #   t.append(coerce(word))
-    for word in s[i]:
-      t.append(coerce(word))
+def cli(t):
+  for slot, v in t.items():
+    v = str(v)
+    for n,x in enumerate(sys.argv):
+      if x=="-" + slot[0] or x== "--" + slot:
+        if v == "false":
+          v = "true"
+        elif v == "true":
+          v = "false"
+        else:
+          v = sys.argv[n + 1]
+      t[slot] = coerce(v)
+  if t['help']:
+    exit (print("\n" + str(t["help"]) + "\n"))
   return t
+ 
+def copy(t):
+  if type(t) != dict:
+    return t
+  return deepcopy(t)
+  
+def csv(fname, fun):
+  initialize_the()
+  seperator = re.compile(r'([^'+the['seperator']+']+)')
+  with open(fname, 'r') as file:
+    s = file.readlines()
+    for row in s:
+      t={}
+      for word in re.finditer(seperator,row):
+        t[len(t)+1] = coerce(word.group(0))
+      fun(t)
+
