@@ -29,7 +29,7 @@
 |Docs: what: point descriptions of each class/function (in isolation) | Yes |
 |Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z| N/A | 
 |Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing| Yes |
-|Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.| No |
+|Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.| N/A |
 |Use of version control tools| Yes |
 |Use of style checkers | N/A |
 |Use of code formatters. | Yes |
