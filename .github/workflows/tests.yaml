@@ -23,5 +23,3 @@ jobs:
     - name: Test with test engine
       run: coverage run __init__.py
       working-directory: ./tests
-    - name: Generate HTML coverage report
-      run: coverage html
