@@ -15,8 +15,8 @@
 ### Rubric:
 
 
-|Notes|Evidence|
-|-----|---------|
+|Notes|Assessment|Evidence|
+|-----|---------|--------|
 |Video1|0| N/A | 
 |Video2|0| N/A | 
 |Workload is spread over the whole team |3| Yes => [Contributor Statistics](https://github.com/yagmurbbayraktar/CSC510_HW2_3_4_5/graphs/contributors) |
