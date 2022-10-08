@@ -16,15 +16,15 @@
 
 
 |Notes|Assesment|Evidence|
-|-----|---------|
-|Video1| N/A | 
-|Video2| N/A | 
-|Workload is spread over the whole team | Yes => [Contributor Statistics](https://github.com/jayrajmulani/group1-se-homeworks/graphs/contributors) |
-|Number of commits(Total)| 87 commits |
-|Number of commits(Individual Spread)| jayrajmulani ---> 25 <br> Yashasya ---> 11 <br> Harshil47 ---> 11 <br> anishasc99 ---> 8 <br> Dhrumil0310 ---> 6 
-|Issues reports: | 0 ---> open <br> 13 ---> closed |
+|-----|---------|--------|
+|Video1|0| N/A | 
+|Video2|0| N/A | 
+|Workload is spread over the whole team |3| Yes => [Contributor Statistics](https://github.com/jayrajmulani/group1-se-homeworks/graphs/contributors) |
+|Number of commits(Total)|3| 87 commits |
+|Number of commits(Individual Spread)|3| jayrajmulani ---> 25 <br> Yashasya ---> 11 <br> Harshil47 ---> 11 <br> anishasc99 ---> 8 <br> Dhrumil0310 ---> 6 
+|Issues reports: |1| 0 ---> open <br> 13 ---> closed |
 |Issues are being closed| Yes |
-|DOI badge: exists| ([Yes](https://zenodo.org/record/7110412)) |
+|DOI badge: exists|3| ([Yes](https://zenodo.org/record/7110412)) |
 |Docs: doco generated, format not ugly |3| Yes |
 |Docs: what: point descriptions of each class/function (in isolation) |3| Yes |
 |Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z| N/A | 
