@@ -23,7 +23,12 @@ jobs:
     - name: Test with test engine
       run: python __init__.py
       working-directory: ./tests
-    - name: Generate Code Coverage Report
-      run: coverage run tests/__init__.py
+    # - name: Generate Code Coverage Report
+    #   run: coverage run tests/__init__.py
+    - name: checking code cov
+      run: | 
+      $ProgressPreference = 'SilentlyContinue'
+      Invoke-WebRequest -Uri https://uploader.codecov.io/latest/windows/codecov.exe -Outfile codecov.exe
+      .\codecov.exe
     - name: Upload Coverage to Codecov
       uses: codecov/codecov-action@v2
