@@ -15,7 +15,7 @@
 ### Rubric:
 
 
-|Notes|Evidence|
+|Notes|Assesment|Evidence|
 |-----|---------|
 |Video1| N/A | 
 |Video2| N/A | 
@@ -39,7 +39,7 @@
 |Test cases exist|3| Yes |
 |Test cases are routinely executed|3|  ([Yes](https://github.com/jayrajmulani/group1-se-homeworks/actions))|
 |The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up|3| Yes |
-|Issues are discussed before they are closed| N/A |
+|Issues are discussed before they are closed|1| N/A |
 |Chat channel: exists|0| No |
 |Test cases: a large proportion of the issues related to handling failing cases.|0| N/A |
 |Evidence that the whole team is using the same tools: everyone can get to all tools and files|3| Yes |
