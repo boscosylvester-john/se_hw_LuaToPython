@@ -20,16 +20,12 @@
 
 Implement the functionalities of [this](https://github.com/txt/se22/blob/main/etc/pdf/csv.pdf) Lua code in Python. Basically this code will read and help store CSV data in an appropriate format. It also summarizes the data column wise and displays a few statistics.
 
-### Functionality
-
-- Read CSV
-- CLI
-- Generate Summary
-
 ### DataTypes
 
-- Sym
-- Num
+- Sym<br>
+  These are variable names that start with a lower case letter
+- Num<br>
+  These are variable names that start with an upper case letter
 
 ### Classes
 
@@ -38,6 +34,22 @@ Implement the functionalities of [this](https://github.com/txt/se22/blob/main/et
 - Data
 - Cols
 - Row
+
+### Functionality
+
+- Read CSV<br>
+  A csv function that reads each line of a text file, divides on some operator (e.g. comma), removes leading and trailing white space, then coerces the cells to ints, floats, booleans or (failing the rest) to strings.
+- CLI<br>
+  It can update the predefined settings to a custom value
+- Help<br>
+  Display the option for the CLI functioanlity using -h option
+- Generate Summary
+  - For Sym datatype-
+    - div = entropy = for symbols occurring at probability p1,p2,... then entropy defined by ∑ -pi \* log2(pi).
+    - mid = mode which is the most common symbol
+  - For Num datatype-
+    - div = standard deviation = sort numbers, find 90th, 10th percentile, return (90th-10th)/2.56
+    - mid = median of all the numbers
 
 ## Getting Started
 
@@ -59,6 +71,17 @@ Implement the functionalities of [this](https://github.com/txt/se22/blob/main/et
   ```
 
 ### Running Tests
+
+- Test all the test files using
+  ```bash
+  $ cd Python_Summarizer/tests
+  $ python __init__.py
+  ```
+- Generate the coverage reports
+  ```bash
+  $ cd Python_Summarizer/tests
+  $ coverage run __init__.py
+  ```
 
 ## Coverage Reports
 
@@ -163,7 +186,7 @@ The basic mathemtical operations that this repo does are-
 - Github Desktop
 - Git Bash
 - VS Code
-- Codacy
+- Codecov
 
 ## License
 
